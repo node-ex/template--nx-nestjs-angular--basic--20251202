@@ -4,4 +4,5 @@
 
 ```
 npx create-nx-workspace --pm pnpm
+pnpm exec nx add @nx/nest
 ```
