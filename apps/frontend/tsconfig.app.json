@@ -3,7 +3,7 @@
   "compilerOptions": {
     "outDir": "../../dist/out-tsc",
     "types": [],
-    "lib": ["es2022", "dom"],
+    "lib": ["es2023", "dom"],
     "module": "preserve",
     "moduleResolution": "bundler"
   },
