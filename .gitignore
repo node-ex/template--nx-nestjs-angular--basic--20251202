@@ -394,3 +394,7 @@ Thumbs.db
 .env.*
 !.env.template
 !.env.*.template
+
+# Claude Code
+CLAUDE.md
+.mcp.json
