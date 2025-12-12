@@ -1,0 +1,13 @@
+diff --git a/src/executors/node/node.impl.js b/src/executors/node/node.impl.js
+index 32bff969752dd084ebc7ed3278fc9cb067c26b5d..bf229af3e97cec1262ea818d6094fbb9dda7294c 100644
+--- a/src/executors/node/node.impl.js
++++ b/src/executors/node/node.impl.js
+@@ -208,7 +208,7 @@ async function* nodeExecutor(options, context) {
+             const runBuild = async () => {
+                 let childProcess = null;
+                 const whenReady = new Promise(async (resolve) => {
+-                    childProcess = (0, child_process_1.fork)(require.resolve('nx'), [
++                    childProcess = (0, child_process_1.fork)(require.resolve('nx/bin/nx.js'), [
+                         'run',
+                         `${context.projectName}:${buildTarget.target}${buildTarget.configuration ? `:${buildTarget.configuration}` : ''}`,
+                     ], {

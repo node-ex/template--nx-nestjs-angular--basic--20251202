@@ -7,3 +7,6 @@ onlyBuiltDependencies:
   - msgpackr-extract
   - nx
   - unrs-resolver
+
+patchedDependencies:
+  '@nx/js@22.2.1': patches/@nx__js@22.2.1.patch
