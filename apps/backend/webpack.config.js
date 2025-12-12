@@ -20,6 +20,7 @@ module.exports = {
       outputHashing: 'none',
       generatePackageJson: true,
       sourceMaps: true,
+      skipTypeChecking: true, // Default: false
     }),
   ],
 };
