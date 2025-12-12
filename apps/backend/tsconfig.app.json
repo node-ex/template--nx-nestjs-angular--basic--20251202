@@ -3,16 +3,10 @@
   "compilerOptions": {
     "outDir": "../../dist/out-tsc",
     "module": "nodenext",
-    "types": ["node"],
-    "experimentalDecorators": true,
-    "emitDecoratorMetadata": true,
-    "target": "es2021",
     "moduleResolution": "nodenext",
-    "strictNullChecks": true,
-    "noImplicitAny": true,
-    "strictBindCallApply": true,
-    "forceConsistentCasingInFileNames": true,
-    "noFallthroughCasesInSwitch": true
+    "target": "es2021",
+    "types": ["node"],
+    "emitDecoratorMetadata": true
   },
   "include": ["src/**/*.ts"],
   "exclude": [

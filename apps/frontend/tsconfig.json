@@ -1,18 +1,6 @@
 {
   "extends": "../../tsconfig.base.json",
-  "compilerOptions": {
-    "noPropertyAccessFromIndexSignature": true,
-    "experimentalDecorators": true,
-    "moduleResolution": "bundler",
-    "module": "preserve"
-  },
-  "angularCompilerOptions": {
-    "enableI18nLegacyMessageIdFormat": false,
-    "strictInjectionParameters": true,
-    "strictInputAccessModifiers": true,
-    "typeCheckHostBindings": true,
-    "strictTemplates": true
-  },
+  "compilerOptions": {},
   "files": [],
   "include": [],
   "references": [
