@@ -5,9 +5,11 @@
   "scripts": {},
   "private": true,
   "devDependencies": {
+    "@angular-devkit/core": "~20.3.0",
     "@eslint/js": "^9.8.0",
     "@nestjs/schematics": "^11.0.0",
     "@nestjs/testing": "^11.0.0",
+    "@nx/angular": "^22.2.1",
     "@nx/eslint": "22.2.1",
     "@nx/eslint-plugin": "22.2.1",
     "@nx/jest": "22.2.1",
