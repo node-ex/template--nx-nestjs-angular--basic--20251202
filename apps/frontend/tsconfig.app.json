@@ -2,7 +2,10 @@
   "extends": "./tsconfig.json",
   "compilerOptions": {
     "outDir": "../../dist/out-tsc",
-    "types": []
+    "types": [],
+    "lib": ["es2022", "dom"],
+    "module": "preserve",
+    "moduleResolution": "bundler"
   },
   "include": ["src/**/*.ts"],
   "exclude": [
