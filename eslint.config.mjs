@@ -1,11 +1,30 @@
 import nx from '@nx/eslint-plugin';
 
 export default [
+  // https://github.com/nrwl/nx/blob/master/packages/eslint-plugin/src/flat-configs/base.ts
   ...nx.configs['flat/base'],
+  // https://github.com/nrwl/nx/blob/master/packages/eslint-plugin/src/flat-configs/javascript.ts
   ...nx.configs['flat/typescript'],
+  // https://github.com/nrwl/nx/blob/master/packages/eslint-plugin/src/flat-configs/typescript.ts
   ...nx.configs['flat/javascript'],
   {
-    ignores: ['**/dist', '**/out-tsc', 'patches'],
+    ignores: [
+      /* Root folders */
+      '.angular',
+      '.git',
+      '.idea',
+      '.nx',
+      'coverage',
+      'node_modules',
+      'patches',
+      /* Root files */
+      'pnpm-lock.yaml',
+      /* Nested folders */
+      '**/dist',
+      '**/out-tsc',
+      /* Nested files */
+      '**/*.tsbuildinfo',
+    ],
   },
   {
     files: ['**/*.ts', '**/*.tsx', '**/*.js', '**/*.jsx'],
