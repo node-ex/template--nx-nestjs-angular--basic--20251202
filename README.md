@@ -10,6 +10,9 @@
     - [Formatting](#formatting)
     - [Type checking](#type-checking)
     - [Linting](#linting)
+    - [Monorepo tooling](#monorepo-tooling)
+    - [Testing](#testing)
+      - [Unit tests](#unit-tests)
 
 ## Initialization
 
@@ -160,3 +163,48 @@ pnpm exec nx affected -t lint --base=HEAD
 ```
 
 VSCode "ESLint" extension is recommended to lint files. See example `.vscode/settings.template.json` for recommended settings.
+
+### Monorepo tooling
+
+This project uses Nx as a monorepo tool. If you want to run Nx commands, either use CLI `nx` command or VScode "Nx console" extension (highly recommended).
+
+```bash
+# Show Nx project/task graphs via web UI
+pnpm exec nx graph
+
+# Show affected projects for a specific target via web UI
+pnpm exec nx affected -t build --graph --base=HEAD
+# Or use Nx Console extension -> "affected --graph" command
+
+# Show all projects in the current Nx workspace
+pnpm exec nx show projects
+
+# Show details about a specific project and its targets
+pnpm exec nx show project backend
+pnpm exec nx show --json project backend
+pnpm exec nx show --json project backend | jq
+```
+
+### Testing
+
+#### Unit tests
+
+Unit tests are run using Jest. To run them, either use commands from `package.json` or Nx commands.
+
+```bash
+# Run tests for a single app
+pnpm exec nx test backend
+
+# Run tests for all apps
+pnpm exec nx run-many -t test
+
+# Run tests for multiple apps
+pnpm exec nx run-many -t test -p backend frontend
+
+# Run unit tests only for affected projects (useful for CI)
+pnpm exec nx affected -t test --base=main
+pnpm exec nx affected -t test --base=main --head=HEAD
+pnpm exec nx affected -t test --base=HEAD
+```
+
+VSCode "Jest" and/or "Jest Runner" extensions are recommended to run the tests. See example `.vscode/settings.template.json` for recommended settings.
