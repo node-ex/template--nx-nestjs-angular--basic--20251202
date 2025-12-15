@@ -1,9 +1,9 @@
 {
-  "name": "@org/source",
+  "name": "template--nx-nestjs-angular--basic--20251202",
   "version": "0.0.0",
   "license": "MIT",
-  "scripts": {},
   "private": true,
+  "scripts": {},
   "devDependencies": {
     "@angular-devkit/core": "~20.3.0",
     "@angular-devkit/schematics": "~20.3.0",
