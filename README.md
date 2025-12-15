@@ -10,6 +10,9 @@
     - [Formatting](#formatting)
     - [Type checking](#type-checking)
     - [Linting](#linting)
+    - [Debugging](#debugging)
+      - [Frontend](#frontend)
+      - [Backend](#backend)
     - [Monorepo tooling](#monorepo-tooling)
     - [Testing](#testing)
       - [Unit tests](#unit-tests)
@@ -164,6 +167,26 @@ pnpm exec nx affected -t lint --base=HEAD
 ```
 
 VSCode "ESLint" extension is recommended to lint files. See example `.vscode/settings.template.json` for recommended settings.
+
+### Debugging
+
+#### Frontend
+
+Debugging with Google Chrome's "Sources" DevTool should work out-of-the-box for the `nx serve` command, because:
+
+- `apps/frontend/project.json` - `targets.build.configurations.development.sourceMap` is set to `true`
+
+#### Backend
+
+Debugging with VSCode's "JavaScript Debug Terminal" should work out-of-the-box for the `nx serve` command, because:
+
+- `apps/backend/tsconfig.app.json` - `compilerOptions.sourceMap` is set to `true`
+- `apps/backend/webpack.config.js` - `devtool` is set to `"source-map"` in non-production mode
+
+VSCode's example debug configurations are stored in the `.vscode/launch.template.json`. To use the `attach` configuration:
+
+- Copy it to `.vscode/launch.json`
+- `apps/backend/project.json` - set `targets.serve.options.inspect` to one of the non-`false` values
 
 ### Monorepo tooling
 
