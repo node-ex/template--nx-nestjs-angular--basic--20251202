@@ -1,0 +1,47 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      /* Universal - Mandatory */
+      "name": "Node.js - Attach",
+      "type": "node",
+      "request": "attach",
+      /* Universal - Optional */
+      "sourceMaps": true,
+      "restart": true,
+      "skipFiles": ["<node_internals>/**"],
+      "outFiles": [
+        "${workspaceFolder}/dist/apps/backend/**/*.(m|c|)js",
+        "!**/node_modules/**"
+      ],
+      "resolveSourceMapLocations": [
+        "${workspaceFolder}/**",
+        "!**/node_modules/**"
+      ],
+      /* Attach-specific */
+      "port": 9229
+    },
+    {
+      /* Universal - Mandatory */
+      "name": "Node.js - Launch",
+      "type": "node",
+      "request": "launch",
+      /* Universal - Optional */
+      "sourceMaps": true,
+      "internalConsoleOptions": "neverOpen",
+      "cwd": "${workspaceFolder}",
+      "env": {
+        "NODE_OPTIONS": "--inspect=9229"
+      },
+      "skipFiles": ["<node_internals>/**"],
+      "outFiles": [
+        "${workspaceFolder}/apps/backend/dist/**/*.(m|c|)js",
+        "!**/node_modules/**"
+      ],
+      /* Launch-specific */
+      "runtimeExecutable": "pnpm",
+      "runtimeArgs": ["nx", "serve", "backend"],
+      "console": "integratedTerminal"
+    }
+  ]
+}
