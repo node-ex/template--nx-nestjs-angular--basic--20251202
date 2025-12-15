@@ -13,10 +13,9 @@
     - [Debugging](#debugging)
       - [Frontend](#frontend)
       - [Backend](#backend)
-    - [Monorepo tooling](#monorepo-tooling)
     - [Testing](#testing)
       - [Unit tests](#unit-tests)
-    - [Monorepo tooling](#monorepo-tooling-1)
+    - [Monorepo tooling](#monorepo-tooling)
 
 ## Initialization
 
@@ -187,27 +186,6 @@ VSCode's example debug configurations are stored in the `.vscode/launch.template
 
 - Copy it to `.vscode/launch.json`
 - `apps/backend/project.json` - set `targets.serve.options.inspect` to one of the non-`false` values
-
-### Monorepo tooling
-
-This project uses Nx as a monorepo tool. If you want to run Nx commands, either use CLI `nx` command or VScode "Nx console" extension (highly recommended).
-
-```bash
-# Show Nx project/task graphs via web UI
-pnpm exec nx graph
-
-# Show affected projects for a specific target via web UI
-pnpm exec nx affected -t build --graph --base=HEAD
-# Or use Nx Console extension -> "affected --graph" command
-
-# Show all projects in the current Nx workspace
-pnpm exec nx show projects
-
-# Show details about a specific project and its targets
-pnpm exec nx show project backend
-pnpm exec nx show --json project backend
-pnpm exec nx show --json project backend | jq
-```
 
 ### Testing
 
